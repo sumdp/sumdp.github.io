@@ -191,3 +191,7 @@ header {
 	padding-left: 0.2em;
 	padding-right: 0.2em;
   }
+  /* Mobile first queries */
+
+  /* Larger than mobile */
+  @media (min-width: 400px) {}
