@@ -1,0 +1,145 @@
+header {
+	width: 100%;
+	top: 0;
+	padding: 1.5em;
+	position: fixed;
+}
+
+header {
+	z-index: 1000;
+}
+.site-logo {
+	position: relative;
+	display: block;
+	float: left;
+	width: 3.1em;
+}
+.site-logo img {
+	width: 3.1em;
+}
+.logo {
+	opacity: 1;
+}
+.site-nav {
+	position: relative;
+	float: left;
+	z-index: 400;
+	top: 0;
+	left: 0;
+	display: block !important;
+	width: 80%;
+	padding: .75em 1em 0 0;
+	opacity: .95;
+	background: none;
+}
+.site-nav ul {
+	list-style-type: none;
+	margin: 0;
+	text-align: right;
+}
+.site-nav ul li {
+	display: inline-block;
+	margin-bottom: 0;
+	margin-left: 1.5em;
+}
+.site-nav ul li a {
+	font-size: .85em;
+	padding-bottom: .5em;
+	text-decoration: none;
+	letter-spacing: .15em;
+	text-transform: uppercase;
+	color: #fff;
+	-webkit-transition: color .3s;
+	transition: color .3s;
+}
+.site-nav ul li a:hover {
+	outline: none;
+	border-bottom: 1px solid white;
+}
+
+.header-box{
+    color:#FFF;
+    text-align: left;
+    margin-top: 1em;
+    padding-top: 0.5em;
+}
+.title-box{
+    width:100%;
+    margin-bottom: 5%;
+    background-color: #FFF;
+    /*padding-left: 0.4em;*/
+    /*font-size: 1.2em;*/
+    padding: 0.2em 0.2em 0.2em 0.2em;
+  }
+  .description-box{
+    width:100%;
+    margin-bottom: 5%;
+    background-color: #ee17b2;
+    padding: 0.5em 0.5em 0.5em 0.5em;
+  }
+  .description-box-2{
+    width:100%;
+    margin-bottom: 5%;
+    background-color: #fff501;
+    padding: 0.5em 0.5em 0.5em 0.5em;
+  }
+  .bio-box{
+    width:100%;
+    margin-bottom: 5%;
+    background-color: #e9d734;
+    padding: 0.5em 0.5em 0.5em 0.5em;
+  }
+  .construction-box{
+    width:100%;
+    margin-bottom: 5%;
+    background-color: #fe892a;
+    padding: 0.5em 0.5em 0.5em 0.5em;
+  }
+  a{
+    text-decoration: none;
+    font-style: italic;
+    background-color: #05fff9;
+    color: #042dc6;
+    padding: 0.2em 0.2em 0.2em 0.2em;
+  }
+
+  .alt-a{
+    color: #E6FF00;
+    background-color:#000;
+    padding: 0.1em;
+  }
+
+  .icons{
+    text-decoration: none;
+    padding: 0.6em 0.4em 0.4em 0.4em;
+}
+
+  .icons:before {
+        -moz-osx-font-smoothing: grayscale;
+        -webkit-font-smoothing: antialiased;
+        font-family: FontAwesome;
+        font-style: normal;
+        font-weight: normal;
+        text-transform: none !important;
+    }
+
+.icons > .label {
+        display: none;
+    }
+
+  .i{
+    width: 32px;
+  }
+
+  em{
+    color: #E6FF00;
+    background-color:#000;
+    padding-left: 0.4em;
+    padding-right: 0.2em;
+  }
+  em-2{
+    color: #ffffff;
+    background-color:#1c00ff;
+    padding-left: 0.4em;
+    padding-right: 0.2em;
+  }
