@@ -48,7 +48,8 @@ header {
 	text-decoration: none;
 	letter-spacing: .15em;
 	text-transform: uppercase;
-	color: #fff;
+	color: #E6FF00;
+	background-color: #000;
 	-webkit-transition: color .3s;
 	transition: color .3s;
 }
@@ -74,14 +75,32 @@ header {
   .description-box{
     width:100%;
     margin-bottom: 5%;
-    background-color: #ee17b2;
+    background-color: #05AAFF;
     padding: 0.5em 0.5em 0.5em 0.5em;
   }
   .description-box-2{
     width:100%;
     margin-bottom: 5%;
-    background-color: #fff501;
+    background-color: #FFFFFF;
     padding: 0.5em 0.5em 0.5em 0.5em;
+  }
+  .description-box-3{
+	width:100%;
+	margin-bottom: 5%;
+	background-color: #A704F7;
+	padding: 0.5em 0.5em 0.5em 0.5em;
+  }
+  .description-box-4{
+  width:100%;
+  margin-bottom: 5%;
+  background-color: #E6FF00;
+  padding: 0.5em 0.5em 0.5em 0.5em;
+  }
+  .description-box-5{
+  width:100%;
+  margin-bottom: 5%;
+  background-color: #ee17b2;
+  padding: 0.5em 0.5em 0.5em 0.5em;
   }
   .bio-box{
     width:100%;
@@ -106,6 +125,18 @@ header {
   .alt-a{
     color: #E6FF00;
     background-color:#000;
+    padding: 0.1em;
+  }
+
+  .alt-b{
+    color: #ffffff;
+    background-color:#000;
+    padding: 0.1em;
+  }
+
+  .alt-c{
+    color: #8D0003;
+    background-color:#ffffff;
     padding: 0.1em;
   }
 

@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<title>contact me</title>
+<title>contact</title>
 </head>
 <body>
 </body>
@@ -81,19 +81,19 @@
   <div class="row">
     <div class="six columns">
       <label for="exampleEmailInput">Your email</label>
-      <input class="u-full-width" type="email" placeholder="test@mailbox.com" id="exampleEmailInput">
+      <input class="u-full-width" type="email" name="_replyto" placeholder="test@mailbox.com" id="exampleEmailInput">
     </div>
     <div class="six columns">
       <label for="exampleRecipientInput">Reason for contacting</label>
-      <select class="u-full-width" id="exampleRecipientInput">
-        <option value="Option 1">Questions</option>
-        <option value="Option 2">Admiration</option>
-        <option value="Option 3">Can I get your number?</option>
+      <select class="u-full-width" name="reason" id="exampleRecipientInput">
+        <option value="Questions">Questions</option>
+        <option value="Admiration">Admiration</option>
+        <option value="Can I get your number?">Can I get your number?</option>
       </select>
     </div>
   </div>
   <label for="exampleMessage">Message</label>
-  <textarea class="u-full-width" placeholder="Hola…" id="exampleMessage"></textarea>
+  <textarea class="u-full-width" name="message" placeholder="Hola…" id="exampleMessage"></textarea>
   <label class="example-send-yourself-copy">
     <input type="checkbox">
     <span class="label-body">Send a copy to yourself</span>
