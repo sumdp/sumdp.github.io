@@ -2,10 +2,6 @@ body {
    margin-top:100px;
 }
 
-head {
-	position: fixed;
-}
-
 header {
 	width: 100%;
 	top: 0;
@@ -17,7 +13,7 @@ header {
 	z-index: 1000;
 }
 .site-logo {
-	position: fixed;
+	position: relative;
 	display: block;
 	float: left;
 	width: 3.1em;
@@ -29,7 +25,7 @@ header {
 	opacity: 1;
 }
 .site-nav {
-	position: fixed;
+	position: relative;
 	float: left;
 	z-index: 400;
 	top: 0;
