@@ -3,17 +3,17 @@ body {
 }
 
 header {
-	position: fixed;
 	width: 100%;
 	top: 0;
 	padding: 1.5em;
+	position: fixed;
 }
 
 header {
 	z-index: 1000;
 }
 .site-logo {
-	position: fixed;
+	position: relative;
 	display: block;
 	float: left;
 	width: 3.1em;
@@ -25,13 +25,13 @@ header {
 	opacity: 1;
 }
 .site-nav {
-	position: fixed;
+	position: relative;
 	float: left;
 	z-index: 400;
 	top: 0;
 	left: 0;
 	display: block !important;
-	width: 60%;
+	width: 80%;
 	padding: .75em 1em 0 0;
 	opacity: .95;
 	background: none;
