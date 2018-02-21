@@ -139,6 +139,7 @@ header {
   }
 
   .alt-c{
+    font-style: normal;
     color: #8D0003;
     background-color:#ffffff;
     padding: 0.1em;
@@ -147,6 +148,12 @@ header {
   .alt-d{
     color: #B1FF04;
     background-color:#000;
+    padding: 0.1em;
+  }
+  .alt-yc{
+    font-style: normal;
+    color: #ffffff;
+    background-color:#FB651E;
     padding: 0.1em;
   }
   .icons{
