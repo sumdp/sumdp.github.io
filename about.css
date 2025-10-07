@@ -1,0 +1,62 @@
+/* About Page Specific Styles */
+
+/* Main Content */
+main {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 8rem 2rem 4rem;
+}
+
+.content {
+    font-size: 1.1rem;
+    line-height: 1.8;
+}
+
+.content p {
+    margin-bottom: 1.5rem;
+}
+
+.content a {
+    color: #1a1a1a;
+    text-decoration: none;
+    border-bottom: 2px solid #1a1a1a;
+    transition: opacity 0.3s ease;
+}
+
+.content a:hover {
+    opacity: 0.6;
+}
+
+h2 {
+    font-size: 1.3rem;
+    font-weight: 600;
+    margin: 2.5rem 0 1rem;
+}
+
+ul {
+    list-style: none;
+    margin: 1rem 0 1.5rem;
+}
+
+ul li {
+    margin-bottom: 0.5rem;
+    padding-left: 1.5rem;
+    position: relative;
+}
+
+ul li:before {
+    content: "—";
+    position: absolute;
+    left: 0;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    main {
+        padding: 7rem 1.5rem 3rem;
+    }
+
+    .content {
+        font-size: 1rem;
+    }
+}

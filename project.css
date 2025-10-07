@@ -1,0 +1,282 @@
+/* Individual Project Page Styles */
+
+/* Main Content */
+main {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 8rem 2rem 4rem;
+}
+
+/* Back Link */
+.back-link {
+    display: inline-block;
+    margin-bottom: 2rem;
+    color: #4a4a4a;
+    text-decoration: none;
+    font-size: 0.95rem;
+    transition: color 0.3s ease;
+}
+
+.back-link:hover {
+    color: #1a1a1a;
+}
+
+.back-link::before {
+    content: "← ";
+}
+
+/* Project Header */
+.project-header {
+    margin-bottom: 3rem;
+}
+
+.project-header h1 {
+    font-size: 2.5rem;
+    margin-bottom: 0.75rem;
+    font-weight: 600;
+    color: #1a1a1a;
+    line-height: 1.2;
+}
+
+.organization {
+    color: #666;
+    font-style: italic;
+    font-size: 1.1rem;
+    margin-bottom: 1.5rem;
+    display: block;
+}
+
+.project-meta {
+    display: flex;
+    gap: 2rem;
+    flex-wrap: wrap;
+    padding: 1rem 0;
+    border-top: 1px solid #e5e5e5;
+    border-bottom: 1px solid #e5e5e5;
+}
+
+.meta-item {
+    display: flex;
+    flex-direction: column;
+}
+
+.meta-label {
+    font-size: 0.75rem;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    color: #666;
+    margin-bottom: 0.25rem;
+    font-weight: 600;
+}
+
+.meta-value {
+    color: #1a1a1a;
+    font-size: 0.95rem;
+}
+
+/* Project Content */
+.project-content {
+    font-size: 1.1rem;
+    line-height: 1.8;
+}
+
+.project-content h2 {
+    font-size: 1.5rem;
+    margin: 2.5rem 0 1rem;
+    font-weight: 600;
+    color: #1a1a1a;
+}
+
+.project-content h2:first-child {
+    margin-top: 0;
+}
+
+.project-content h3 {
+    font-size: 1.2rem;
+    margin: 2rem 0 0.75rem;
+    font-weight: 600;
+    color: #1a1a1a;
+}
+
+.project-content p {
+    margin-bottom: 1.5rem;
+    color: #4a4a4a;
+}
+
+.project-content ul,
+.project-content ol {
+    margin: 1rem 0 1.5rem;
+    padding-left: 0;
+    list-style: none;
+}
+
+.project-content li {
+    padding: 0.5rem 0 0.5rem 1.5rem;
+    position: relative;
+    color: #4a4a4a;
+    line-height: 1.7;
+}
+
+.project-content li:before {
+    content: "—";
+    position: absolute;
+    left: 0;
+    color: #1a1a1a;
+}
+
+.project-content a {
+    color: #1a1a1a;
+    text-decoration: none;
+    border-bottom: 2px solid #1a1a1a;
+    transition: opacity 0.3s ease;
+}
+
+.project-content a:hover {
+    opacity: 0.6;
+}
+
+.project-content strong {
+    color: #1a1a1a;
+    font-weight: 600;
+}
+
+.project-content em {
+    font-style: italic;
+}
+
+/* Key Takeaway Box */
+.key-takeaway {
+    background-color: #f9f9f9;
+    padding: 1.5rem;
+    margin: 2rem 0;
+    border-left: 3px solid #1a1a1a;
+}
+
+.key-takeaway h3 {
+    font-size: 1rem;
+    margin: 0 0 0.75rem;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    color: #1a1a1a;
+    font-weight: 600;
+}
+
+.key-takeaway p {
+    margin: 0;
+    color: #1a1a1a;
+    font-size: 1rem;
+    line-height: 1.7;
+}
+
+/* Image/Figure Styles */
+.project-content figure {
+    margin: 2rem 0;
+}
+
+.project-content img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 4px;
+}
+
+.project-content figcaption {
+    margin-top: 0.75rem;
+    font-size: 0.9rem;
+    color: #666;
+    font-style: italic;
+}
+
+/* Project Navigation */
+.project-nav {
+    margin-top: 4rem;
+    padding-top: 2rem;
+    border-top: 1px solid #e5e5e5;
+    display: flex;
+    justify-content: space-between;
+    gap: 2rem;
+}
+
+.project-nav-link {
+    flex: 1;
+    padding: 1rem;
+    border: 1px solid #e5e5e5;
+    border-radius: 4px;
+    text-decoration: none;
+    color: inherit;
+    transition: all 0.3s ease;
+}
+
+.project-nav-link:hover {
+    border-color: #1a1a1a;
+}
+
+.project-nav-link .nav-label {
+    font-size: 0.75rem;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    color: #666;
+    margin-bottom: 0.5rem;
+    display: block;
+}
+
+.project-nav-link .nav-title {
+    color: #1a1a1a;
+    font-weight: 600;
+}
+
+.project-nav-link.prev .nav-label::before {
+    content: "← ";
+}
+
+.project-nav-link.next {
+    text-align: right;
+}
+
+.project-nav-link.next .nav-label::after {
+    content: " →";
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    main {
+        padding: 7rem 1.5rem 3rem;
+    }
+
+    .project-header h1 {
+        font-size: 2rem;
+    }
+
+    .project-meta {
+        gap: 1.5rem;
+    }
+
+    .project-content {
+        font-size: 1rem;
+    }
+
+    .project-content h2 {
+        font-size: 1.3rem;
+    }
+
+    .project-content h3 {
+        font-size: 1.1rem;
+    }
+
+    .project-nav {
+        flex-direction: column;
+    }
+
+    .project-nav-link.next {
+        text-align: left;
+    }
+}
+
+@media (max-width: 480px) {
+    main {
+        padding: 7rem 1rem 2rem;
+    }
+
+    .project-header h1 {
+        font-size: 1.75rem;
+    }
+}

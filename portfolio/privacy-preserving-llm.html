@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Privacy-Preserving LLM Framework | Daniel Pedraza</title>
+    <meta name="description" content="Privacy-first LLM deployment for government contracts at Palantir">
+    <link rel="stylesheet" href="../base-styles.css">
+    <link rel="stylesheet" href="../project.css">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav>
+        <div class="nav-content">
+            <a href="../index.html" class="nav-logo">Daniel Pedraza</a>
+            <div class="nav-links">
+                <a href="../index.html">Home</a>
+                <a href="../about.html">About</a>
+                <a href="../portfolio.html" class="active">Portfolio</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Main Content -->
+    <main>
+        <a href="../portfolio.html" class="back-link">Back to Portfolio</a>
+
+        <div class="project-header">
+            <h1>Privacy-Preserving LLM Deployment Framework</h1>
+            <span class="organization">Palantir Technologies</span>
+            
+            <div class="project-meta">
+                <div class="meta-item">
+                    <span class="meta-label">Role</span>
+                    <span class="meta-value">Deployment Strategist</span>
+                </div>
+                <div class="meta-item">
+                    <span class="meta-label">Timeline</span>
+                    <span class="meta-value">2022-2023</span>
+                </div>
+                <div class="meta-item">
+                    <span class="meta-label">Focus Area</span>
+                    <span class="meta-value">Privacy, LLMs, Government AI</span>
+                </div>
+            </div>
+        </div>
+
+        <article class="project-content">
+            <div class="key-takeaway">
+                <h3>Key Takeaway</h3>
+                <p>Privacy isn't a checkbox—it's an architecture decision. Every layer of the system must be designed with individual rights as a first principle, not an afterthought.</p>
+            </div>
+
+            <h2>Problem Statement</h2>
+            <p>Government agencies with highly sensitive data needed to leverage the power of large language models without compromising national security, privacy, or regulatory compliance. Traditional LLM deployments sent data to external providers, creating unacceptable risks for classified information and personally identifiable information.</p>
+
+            <p>The challenge was threefold:</p>
+            <ul>
+                <li>Enable AI capabilities for sensitive government operations</li>
+                <li>Maintain stringent privacy guarantees and audit trails</li>
+                <li>Meet security requirements for $10M+ contracts</li>
+            </ul>
+
+            <p>Existing solutions required either sending data to third-party APIs (unacceptable for classified data) or building LLMs from scratch (prohibitively expensive and time-consuming). We needed a framework that brought state-of-the-art language models into secure government environments while maintaining complete data sovereignty.</p>
+
+            <h2>Technical Approach</h2>
+            <p>I architected and led deployment of a privacy-preserving LLM framework that enabled government agencies to leverage powerful language models while maintaining complete control over sensitive data. The system incorporated multiple layers of protection:</p>
+
+            <h3>Architecture Components</h3>
+            <ul>
+                <li><strong>Secure Enclaves:</strong> LLM inference running in isolated, air-gapped environments with no external network connectivity</li>
+                <li><strong>Data Residency Controls:</strong> All data processing occurred within government-controlled infrastructure with full audit logging</li>
+                <li><strong>Differential Privacy:</strong> Mathematical privacy guarantees for model training and fine-tuning on sensitive datasets</li>
+                <li><strong>Access Controls:</strong> Role-based permissions with detailed authorization policies</li>
+                <li><strong>Audit Trails:</strong> Complete lineage tracking from data input through model inference to results</li>
+            </ul>
+
+            <h3>Deployment Process</h3>
+            <p>The framework required careful orchestration across technical, operational, and policy domains:</p>
+            <ul>
+                <li>Worked with government IT teams to establish secure infrastructure meeting compliance requirements</li>
+                <li>Developed custom fine-tuning pipelines that maintained privacy guarantees while improving model performance on domain-specific tasks</li>
+                <li>Created monitoring systems to detect potential data leakage or privacy violations</li>
+                <li>Built evaluation frameworks to measure model utility while maintaining differential privacy bounds</li>
+            </ul>
+
+            <h2>Impact</h2>
+            <p>The framework enabled AI capabilities for high-stakes government operations that were previously impossible due to privacy and security constraints. Key outcomes included:</p>
+            <ul>
+                <li><strong>Contract Value:</strong> Enabled deployment for $10M+ government contracts that required strict privacy guarantees</li>
+                <li><strong>Operational Impact:</strong> Government analysts gained AI-assisted capabilities while maintaining security clearances and data protection requirements</li>
+                <li><strong>Technical Precedent:</strong> Established patterns for deploying modern AI in highly regulated environments</li>
+                <li><strong>Risk Mitigation:</strong> Zero data breaches or privacy violations while processing classified and sensitive information</li>
+            </ul>
+
+            <h2>What I Learned</h2>
+            <p><strong>Privacy and performance aren't always in tension.</strong> With thoughtful architecture, we can build systems that are both powerful and privacy-preserving. The key is designing privacy protections into the foundation rather than adding them as constraints.</p>
+
+            <p><strong>Government deployment requires different thinking.</strong> Unlike commercial products where you can iterate quickly, government systems require extensive upfront planning, rigorous security review, and comprehensive documentation. Speed comes from thoroughness, not from moving fast and breaking things.</p>
+
+            <p><strong>Trust is earned through architecture, not promises.</strong> Government stakeholders didn't trust us because we said the system was secure—they trusted us because we could demonstrate exactly how privacy was maintained at every layer. Technical transparency builds confidence.</p>
+
+            <p><strong>The most advanced AI isn't always the right AI.</strong> Sometimes a smaller, locally-run model with clear privacy guarantees is more valuable than a larger, more capable model that introduces risk. Technology decisions must be driven by operational requirements and risk tolerance, not just technical capability.</p>
+
+            <h2>Cross-Connections</h2>
+            <p>This work built directly on lessons from my research on adversarial attacks at Berkman Klein. Understanding how AI systems can fail informed how we built systems that resist failure. The privacy-preserving techniques developed here later influenced my thinking on autonomous systems deployment at Intramotev—how do you build AI that operates safely when you can't always intervene?</p>
+
+            <p>The experience bridging technical teams, government stakeholders, and policy requirements prepared me for subsequent work translating between different worlds—whether data scientists and humanitarian experts at the UN, or engineers and community advocates on environmental justice work.</p>
+        </article>
+
+        <nav class="project-nav">
+            <a href="facial-recognition-adversarial-attacks.html" class="project-nav-link prev">
+                <span class="nav-label">Previous Project</span>
+                <span class="nav-title">Adversarial Attacks on Facial Recognition</span>
+            </a>
+            <a href="community-impact-index.html" class="project-nav-link next">
+                <span class="nav-label">Next Project</span>
+                <span class="nav-title">Community Impact & Investment Index</span>
+            </a>
+        </nav>
+    </main>
+
+    <!-- Footer -->
+    <footer>Daniel Pedraza © 2025</footer>
+</body>
+</html>
