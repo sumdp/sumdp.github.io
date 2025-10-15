@@ -1,0 +1,203 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Project Name | Daniel Pedraza</title>
+
+    <link rel="stylesheet" href="../base-styles.css" />
+
+    <style>
+        /* Spider Web Decorations */
+        .spider-web-decoration {
+            position: fixed;
+            pointer-events: none;
+            z-index: 0;
+            opacity: 0.25;
+        }
+
+        .spider-web-top-right {
+            top: 0;
+            right: 0;
+            width: 500px;
+            height: 500px;
+        }
+
+        .spider-web-bottom-left {
+            bottom: 0;
+            left: 0;
+            width: 400px;
+            height: 400px;
+        }
+
+        /* Construction Banner */
+        .construction-banner {
+            position: relative;
+            z-index: 10;
+            max-width: 900px;
+            margin: 8rem auto 4rem;
+            padding: 3rem 2rem;
+            text-align: center;
+        }
+
+        .construction-banner h1 {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+            color: #1a1a1a;
+            font-weight: 600;
+        }
+
+        .construction-banner p {
+            font-size: 1.2rem;
+            color: #4a4a4a;
+            font-style: italic;
+            line-height: 1.6;
+        }
+
+        nav, footer {
+            position: relative;
+            z-index: 10;
+        }
+
+        @media (max-width: 768px) {
+            .spider-web-top-right {
+                width: 300px;
+                height: 300px;
+            }
+
+            .spider-web-bottom-left {
+                width: 250px;
+                height: 250px;
+            }
+
+            .construction-banner {
+                margin: 6rem auto 3rem;
+                padding: 2rem 1.5rem;
+            }
+
+            .construction-banner h1 {
+                font-size: 2rem;
+            }
+
+            .construction-banner p {
+                font-size: 1rem;
+            }
+        }
+    </style>
+
+    <script>
+        // Configuration for web density
+        const WEB_RADIAL_LINES = 8;
+        const WEB_CONCENTRIC_RINGS = 6;
+
+        function generateSpiderWeb(svgId, size) {
+            const svg = document.getElementById(svgId);
+            const center = { x: 0, y: 0 };
+
+            // Determine if this is top-right or bottom-left
+            const isTopRight = svgId.includes('top-right');
+
+            if (isTopRight) {
+                center.x = size;
+                center.y = 0;
+            } else {
+                center.x = 0;
+                center.y = size;
+            }
+
+            // Generate radial lines
+            for (let i = 0; i < WEB_RADIAL_LINES; i++) {
+                const angle = (i / WEB_RADIAL_LINES) * (Math.PI / 2);
+                const endX = center.x + (isTopRight ? -1 : 1) * Math.cos(angle) * size * 0.8;
+                const endY = center.y + (isTopRight ? 1 : -1) * Math.sin(angle) * size * 0.8;
+
+                const line = document.createElementNS('http://www.w3.org/2000/svg', 'line');
+                line.setAttribute('x1', center.x);
+                line.setAttribute('y1', center.y);
+                line.setAttribute('x2', endX);
+                line.setAttribute('y2', endY);
+                line.setAttribute('stroke', '#1a1a1a');
+                line.setAttribute('stroke-width', '0.8');
+                svg.appendChild(line);
+            }
+
+            // Generate concentric rings
+            for (let ring = 1; ring <= WEB_CONCENTRIC_RINGS; ring++) {
+                const radius = (ring / WEB_CONCENTRIC_RINGS) * size * 0.8;
+                const path = document.createElementNS('http://www.w3.org/2000/svg', 'path');
+                let pathData = '';
+
+                for (let i = 0; i <= WEB_RADIAL_LINES; i++) {
+                    const angle = (i / WEB_RADIAL_LINES) * (Math.PI / 2);
+                    const x = center.x + (isTopRight ? -1 : 1) * Math.cos(angle) * radius;
+                    const y = center.y + (isTopRight ? 1 : -1) * Math.sin(angle) * radius;
+
+                    if (i === 0) {
+                        pathData += `M ${x} ${y}`;
+                    } else {
+                        // Create slightly irregular web with quadratic curves
+                        const prevAngle = ((i - 1) / WEB_RADIAL_LINES) * (Math.PI / 2);
+                        const prevX = center.x + (isTopRight ? -1 : 1) * Math.cos(prevAngle) * radius;
+                        const prevY = center.y + (isTopRight ? 1 : -1) * Math.sin(prevAngle) * radius;
+
+                        const controlX = (prevX + x) / 2 + (Math.random() - 0.5) * 10;
+                        const controlY = (prevY + y) / 2 + (Math.random() - 0.5) * 10;
+
+                        pathData += ` Q ${controlX} ${controlY} ${x} ${y}`;
+                    }
+                }
+
+                path.setAttribute('d', pathData);
+                path.setAttribute('stroke', '#1a1a1a');
+                path.setAttribute('stroke-width', '0.8');
+                path.setAttribute('fill', 'none');
+                svg.appendChild(path);
+            }
+
+            // Add a small spider at the center
+            const spider = document.createElementNS('http://www.w3.org/2000/svg', 'circle');
+            spider.setAttribute('cx', center.x);
+            spider.setAttribute('cy', center.y);
+            spider.setAttribute('r', '3');
+            spider.setAttribute('fill', '#1a1a1a');
+            svg.appendChild(spider);
+        }
+
+        document.addEventListener('DOMContentLoaded', () => {
+            generateSpiderWeb('top-right-spider-web', 500);
+            generateSpiderWeb('bottom-left-spider-web', 400);
+        });
+    </script>
+</head>
+<body>
+    <!-- Spider Web Decorations -->
+    <svg class="spider-web-decoration spider-web-top-right" viewBox="0 0 500 500" xmlns="http://www.w3.org/2000/svg">
+        <g id="top-right-spider-web"></g>
+    </svg>
+
+    <svg class="spider-web-decoration spider-web-bottom-left" viewBox="0 0 400 400" xmlns="http://www.w3.org/2000/svg">
+        <g id="bottom-left-spider-web"></g>
+    </svg>
+
+    <!-- Navigation -->
+    <nav>
+        <div class="nav-content">
+            <a href="../index.html" class="nav-logo">Daniel Pedraza</a>
+            <div class="nav-links">
+                <a href="../index.html">Home</a>
+                <a href="../about.html">About</a>
+                <a href="../portfolio.html" class="active">Portfolio</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Construction Banner -->
+    <div class="construction-banner">
+        <h1>🕷️ Web Under Construction</h1>
+        <p>This project page is currently being woven... Check back soon!</p>
+    </div>
+
+    <!-- Footer -->
+    <footer>Daniel Pedraza © 2025</footer>
+</body>
+</html>

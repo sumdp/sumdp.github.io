@@ -1,0 +1,72 @@
+/* Video Styling for Portfolio Projects */
+
+/* Main video sections */
+.video-section, .tech-demo {
+    margin: 3rem 0;
+}
+
+.video-section h2, .tech-demo h3 {
+    margin-bottom: 1.5rem;
+}
+
+/* Responsive video container for embedded content (YouTube, etc.) */
+.video-container {
+    position: relative;
+    padding-bottom: 56.25%; /* 16:9 aspect ratio */
+    height: 0;
+    overflow: hidden;
+    max-width: 100%;
+    background: #000;
+    border-radius: 8px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
+    margin-bottom: 1rem;
+}
+
+.video-container iframe {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    border-radius: 8px;
+}
+
+/* Native HTML5 video element styling */
+.tech-demo .video-container {
+    padding-bottom: 0;
+    height: auto;
+}
+
+.tech-demo .video-container video {
+    position: static;
+    width: 100%;
+    height: auto;
+    display: block;
+    border-radius: 8px;
+}
+
+/* Video captions */
+.video-caption {
+    margin-top: 0.75rem;
+    font-size: 0.95rem;
+    color: #666;
+    font-style: italic;
+    line-height: 1.5;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    .video-section, .tech-demo {
+        margin: 2rem 0;
+    }
+    
+    .video-caption {
+        font-size: 0.9rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .video-section, .tech-demo {
+        margin: 1.5rem 0;
+    }
+}

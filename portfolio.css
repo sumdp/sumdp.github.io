@@ -2,9 +2,9 @@
 
 /* Main Content */
 main {
-    max-width: 900px;
+    max-width: 1200px;
     margin: 0 auto;
-    padding: 8rem 2rem 4rem;
+    padding: 8rem 4rem 4rem;
 }
 
 /* Portfolio Intro */
@@ -71,6 +71,8 @@ main {
     color: inherit;
     transition: all 0.3s ease;
     background-color: #fff;
+    position: relative;
+    overflow: hidden;
 }
 
 .project-card:hover {
@@ -188,4 +190,83 @@ main {
     .project-card {
         padding: 1.25rem;
     }
+}
+
+/* Spider Web Corner Decoration */
+.spider-web-corner {
+    position: absolute;
+    top: -1px;
+    right: -1px;
+    width: 280px;
+    height: 280px;
+    pointer-events: none;
+    opacity: 0.6;
+    transition: opacity 0.3s ease;
+}
+
+.project-card:hover .spider-web-corner {
+    opacity: 0.9;
+    animation: web-pulse 2s ease-in-out infinite;
+}
+
+@keyframes web-pulse {
+    0%, 100% {
+        opacity: 0.9;
+    }
+    50% {
+        opacity: 1;
+    }
+}
+
+.spider-web-corner line,
+.spider-web-corner path {
+    stroke: #1a1a1a;
+    stroke-width: 1.5;
+    fill: none;
+}
+
+.spider {
+    fill: #1a1a1a;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+.project-card:hover .spider {
+    opacity: 0.9;
+    animation: spider-crawl 3s ease-in-out infinite;
+}
+
+@keyframes spider-crawl {
+    0%, 100% {
+        transform: translate(0, 0);
+    }
+    25% {
+        transform: translate(-13.75px, 5px);
+    }
+    50% {
+        transform: translate(-27.5px, 10px);
+    }
+    75% {
+        transform: translate(-13.75px, 5px);
+    }
+}
+
+/* Under Construction Badge */
+.construction-badge {
+    position: absolute;
+    bottom: 12px;
+    right: 12px;
+    background: rgba(26, 26, 26, 0.85);
+    color: #F0EEE6;
+    padding: 0.4rem 0.75rem;
+    border-radius: 4px;
+    font-size: 0.75rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    z-index: 2;
+}
+
+.project-card:hover .construction-badge {
+    background: rgba(26, 26, 26, 0.95);
 }

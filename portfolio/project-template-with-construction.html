@@ -1,0 +1,212 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Project Name | Daniel Pedraza</title>
+    <meta name="description" content="Project description" />
+    <link rel="stylesheet" href="../base-styles.css" />
+    <link rel="stylesheet" href="../project.css" />
+</head>
+<body>
+    <!-- Navigation -->
+    <nav>
+        <div class="nav-content">
+            <a href="../index.html" class="nav-logo">Daniel Pedraza</a>
+            <div class="nav-links">
+                <a href="../index.html">Home</a>
+                <a href="../about.html">About</a>
+                <a href="../portfolio.html" class="active">Portfolio</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Main Content -->
+    <main>
+        <!-- CONSTRUCTION BANNER - Remove this entire section when project is complete -->
+        <style>
+            /* Construction Banner Styles */
+            .construction-wrapper {
+                position: relative;
+                min-height: 60vh;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                overflow: hidden;
+            }
+
+            .construction-parabolic {
+                position: fixed;
+                pointer-events: none;
+                z-index: 0;
+                opacity: 0.3;
+            }
+
+            .construction-top-right {
+                top: 0;
+                right: 0;
+                width: 500px;
+                height: 500px;
+            }
+
+            .construction-bottom-left {
+                bottom: 0;
+                left: 0;
+                width: 400px;
+                height: 400px;
+            }
+
+            .construction-content {
+                position: relative;
+                z-index: 10;
+                text-align: center;
+                max-width: 900px;
+                padding: 3rem 2rem;
+            }
+
+            .construction-content h1 {
+                font-size: 2.5rem;
+                margin-bottom: 1rem;
+                color: #1a1a1a;
+                font-weight: 600;
+            }
+
+            .construction-content p {
+                font-size: 1.2rem;
+                color: #4a4a4a;
+                font-style: italic;
+                line-height: 1.6;
+            }
+
+            @media (max-width: 768px) {
+                .construction-top-right {
+                    width: 300px;
+                    height: 300px;
+                }
+
+                .construction-bottom-left {
+                    width: 250px;
+                    height: 250px;
+                }
+
+                .construction-content h1 {
+                    font-size: 2rem;
+                }
+
+                .construction-content p {
+                    font-size: 1rem;
+                }
+            }
+        </style>
+
+        <script>
+            // Generate parabolic curves for construction banner
+            const CONSTRUCTION_TOP_OFFSET = 25;
+            const CONSTRUCTION_BOTTOM_OFFSET = 40;
+
+            function generateConstructionCurves() {
+                // Top Right Corner
+                const topRightGroup = document.getElementById('construction-top-right');
+                if (topRightGroup) {
+                    const topRightSize = 500;
+                    for (let i = CONSTRUCTION_TOP_OFFSET; i < topRightSize; i += CONSTRUCTION_TOP_OFFSET) {
+                        const line = document.createElementNS('http://www.w3.org/2000/svg', 'line');
+                        line.setAttribute('x1', i);
+                        line.setAttribute('y1', 0);
+                        line.setAttribute('x2', topRightSize);
+                        line.setAttribute('y2', i);
+                        line.setAttribute('stroke', '#1a1a1a');
+                        line.setAttribute('stroke-width', '0.8');
+                        topRightGroup.appendChild(line);
+                    }
+                }
+
+                // Bottom Left Corner
+                const bottomLeftGroup = document.getElementById('construction-bottom-left');
+                if (bottomLeftGroup) {
+                    const bottomLeftSize = 400;
+                    for (let i = CONSTRUCTION_BOTTOM_OFFSET; i < bottomLeftSize; i += CONSTRUCTION_BOTTOM_OFFSET) {
+                        const line = document.createElementNS('http://www.w3.org/2000/svg', 'line');
+                        line.setAttribute('x1', 0);
+                        line.setAttribute('y1', i);
+                        line.setAttribute('x2', i);
+                        line.setAttribute('y2', bottomLeftSize);
+                        line.setAttribute('stroke', '#1a1a1a');
+                        line.setAttribute('stroke-width', '0.8');
+                        bottomLeftGroup.appendChild(line);
+                    }
+                }
+            }
+
+            // Run when DOM is ready
+            if (document.readyState === 'loading') {
+                document.addEventListener('DOMContentLoaded', generateConstructionCurves);
+            } else {
+                generateConstructionCurves();
+            }
+        </script>
+
+        <!-- Parabolic Curve Decorations -->
+        <svg class="construction-parabolic construction-top-right" viewBox="0 0 500 500" xmlns="http://www.w3.org/2000/svg">
+            <g id="construction-top-right">
+                <!-- Baselines -->
+                <line x1="0" y1="0" x2="500" y2="0" stroke="#1a1a1a" stroke-width="0.5" />
+                <line x1="500" y1="0" x2="500" y2="500" stroke="#1a1a1a" stroke-width="0.5" />
+                <!-- Parabolic lines generated by JavaScript -->
+            </g>
+        </svg>
+
+        <svg class="construction-parabolic construction-bottom-left" viewBox="0 0 400 400" xmlns="http://www.w3.org/2000/svg">
+            <g id="construction-bottom-left">
+                <!-- Baselines -->
+                <line x1="0" y1="0" x2="0" y2="400" stroke="#1a1a1a" stroke-width="0.5" />
+                <line x1="0" y1="400" x2="400" y2="400" stroke="#1a1a1a" stroke-width="0.5" />
+                <!-- Parabolic lines generated by JavaScript -->
+            </g>
+        </svg>
+
+        <!-- Construction Banner Content -->
+        <div class="construction-wrapper">
+            <div class="construction-content">
+                <h1>🕷️ Web Under Construction</h1>
+                <p>This project page is currently being woven... Check back soon!</p>
+            </div>
+        </div>
+        <!-- END CONSTRUCTION BANNER -->
+
+        <!-- WHEN PROJECT IS COMPLETE, REPLACE CONSTRUCTION BANNER WITH YOUR ACTUAL CONTENT:
+
+        <a href="../portfolio.html" class="back-link">Back to Portfolio</a>
+
+        <div class="project-header">
+            <h1>Project Name</h1>
+            <span class="organization">Organization Name</span>
+
+            <div class="project-meta">
+                <div class="meta-item">
+                    <span class="meta-label">Role</span>
+                    <span class="meta-value">Your Role</span>
+                </div>
+                <div class="meta-item">
+                    <span class="meta-label">Timeline</span>
+                    <span class="meta-value">Timeline</span>
+                </div>
+                <div class="meta-item">
+                    <span class="meta-label">Focus Area</span>
+                    <span class="meta-value">Focus Areas</span>
+                </div>
+            </div>
+        </div>
+
+        <article class="project-content">
+            <h2>Your Content Here</h2>
+            <p>Your project details...</p>
+        </article>
+
+        -->
+    </main>
+
+    <!-- Footer -->
+    <footer>Daniel Pedraza © 2025</footer>
+</body>
+</html>
