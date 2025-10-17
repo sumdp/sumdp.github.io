@@ -6,7 +6,7 @@
         <title>Daniel Pedraza</title>
         <meta
             name="description"
-            content="Deployment strategist and systems engineer building the future of autonomous systems."
+            content="Curious person. Engineer. Likes to build & break things."
         />
 
         <!-- External Stylesheets -->
@@ -45,7 +45,7 @@
         <div class="container">
             <div class="profile">
                 <img
-                    src="profile.jpg"
+                    src="profile_right.jpg"
                     alt="Daniel Pedraza"
                     class="profile-img"
                 />
@@ -889,6 +889,67 @@
                     }
                 }
             }
+
+            // ===== INTERACTIVE PROFILE IMAGE =====
+            // Changes profile image based on click position (up, left, right, down)
+            // Uses diagonal zones that create 4 triangular regions meeting in the center
+            const profileImg = document.querySelector(".profile-img");
+            let currentImage = "profile_right.jpg"; // default
+
+            const images = {
+                left: "profile_right.jpg",
+                up: "profile_up.jpg",
+                right: "profile_left.jpg",
+                down: "profile_down.jpg",
+            };
+
+            // Track click position for profile image changes
+            document.addEventListener("click", (e) => {
+                const mouseX = e.clientX;
+                const mouseY = e.clientY;
+                const screenWidth = window.innerWidth;
+                const screenHeight = window.innerHeight;
+
+                // Create diagonal zones using two diagonal lines that cross in the center
+                // Diagonal 1: top-left to bottom-right
+                // Diagonal 2: top-right to bottom-left
+
+                // Calculate which side of each diagonal the mouse is on
+                const centerX = screenWidth / 2;
+                const centerY = screenHeight / 2;
+
+                // Check if above/below the top-left to bottom-right diagonal
+                const aboveTLBR =
+                    mouseY < (mouseX * screenHeight) / screenWidth;
+
+                // Check if above/below the top-right to bottom-left diagonal
+                const aboveTRBL =
+                    mouseY <
+                    screenHeight - (mouseX * screenHeight) / screenWidth;
+
+                let newImage;
+
+                // Determine which triangular zone the mouse is in
+                if (aboveTLBR && aboveTRBL) {
+                    // Top triangle
+                    newImage = images.up;
+                } else if (!aboveTLBR && aboveTRBL) {
+                    // Right triangle
+                    newImage = images.right;
+                } else if (!aboveTLBR && !aboveTRBL) {
+                    // Bottom triangle
+                    newImage = images.down;
+                } else {
+                    // Left triangle
+                    newImage = images.left;
+                }
+
+                // Only update if image changed (performance optimization)
+                if (newImage !== currentImage) {
+                    profileImg.src = newImage;
+                    currentImage = newImage;
+                }
+            });
 
             function animate() {
                 // Clear and draw network graph on main canvas
